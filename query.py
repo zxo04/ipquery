@@ -24,14 +24,14 @@ def scan_ips(start_ip, end_ip):
             # Write the found IP to the file immediately
             with open("found_ips.txt", "a") as file:
                 file.write(ip + "\n")
+        
         current[3] += 1
         for i in range(3, 0, -1):
             if current[i] == 256:
                 current[i] = 0
                 current[i - 1] += 1
 
-
 if __name__ == "__main__":
-    start_ip = "5.62.0.0"
+    start_ip = "5.62.90.0"
     end_ip = "5.62.255.255"
     scan_ips(start_ip, end_ip)
